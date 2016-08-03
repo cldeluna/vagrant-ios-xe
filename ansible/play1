@@ -1,0 +1,12 @@
+---
+
+- hosts: rtr
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+    - name: push a configuration onto the device
+      net_config:
+        src: config.j2
+        backup: yes

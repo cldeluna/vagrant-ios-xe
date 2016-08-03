@@ -1,0 +1,43 @@
+---
+
+- name: Backing up Cisco Configurations
+  hosts: rtr 
+  gather_facts: no
+  connection: local
+
+
+  tasks:
+
+    - name: Show IP Interface Brief
+      ios_command:
+        commands:
+           - show ip int br
+           - show inventory
+           - show run
+        host: "{{ inventory_hostname }}"
+        username: vagrant
+        password: vagrant
+
+
+      register: intbr
+
+    - debug: var=intbr.stdout_lines
+
+    - name: Save Show Command output
+      copy:
+        content: "{{ intbr.stdout }}"
+        dest: "~/ansible/show_commands/{{ inventory_hostname }}.log"
+
+
+    - name: Backup a configuration on a device
+      ios_template:
+        host: "{{ inventory_hostname }}"
+        username: vagrant
+        password: vagrant
+        backup: true
+        src: ntp.j2
+
+
+      register: bkup
+
+    - debug: var=bkup.stdout_lines
