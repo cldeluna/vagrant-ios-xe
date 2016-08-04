@@ -46,6 +46,7 @@ Once all the VMS have been created and provisioned, the three routers will need 
 
 
 ### rtr1 base config
+
 ```
 !Bootstrap Config for ssh
 
@@ -106,8 +107,8 @@ interface GigabitEthernet2
 	     ```
 
 	     ### rtr2 base config
-	     ```
 
+	     ```
 	     hostname rtr2
 
 	     enable secret vagrant
@@ -164,6 +165,7 @@ interface GigabitEthernet2
 			    ```
 
 			    ### rtr3 base config
+
 			    ```
 			    hostname rtr3
 
@@ -218,7 +220,8 @@ interface GigabitEthernet2
 					   end
 					   wr mem
 					   sh ip int br
-
 					   ```
+
+
 
 
