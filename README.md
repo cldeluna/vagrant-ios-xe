@@ -11,8 +11,8 @@
 
 ###Instructions:
 
-You will need download the csr1000v iso from cisco.com.
-Once you have the iso bring up a VM accepting all the defaults but these:
+You will need to download the csr1000v iso image from cisco.com.
+Once you have the iso image bring up a new VM in VirtualBox accepting all the defaults but these:
 
 * Name - csr1000v
 
