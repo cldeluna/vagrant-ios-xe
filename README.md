@@ -1,20 +1,26 @@
 # 3-Node + Ansible Control Server
 ## Vagrant configuration with three Cisco CSR1000v routers (4 interfaces each) and one Ubuntu 14.04 server acting as an Asible Control System 
-## Basic Cisco Environment for Testing Ansible Roles
+## Basic Cisco IOS-XE Environment for Testing Ansible Roles
 
 ###Requirements:
-VirtualBox
-Vagrant
-Cisco CSR1000v ISO Image
++ VirtualBox
+
++ Vagrant
+
++ Cisco CSR1000v ISO Image
 
 ###Instructions:
 
 You will need download the csr1000v iso from cisco.com.
 Once you have the iso bring up a VM accepting all the defaults but these:
-Name - csr1000v
-Base OS = OtherLinux64
-Memory = 3072
-Enable Serial Port (Port mode can be Disconnected)
+
+* Name - csr1000v
+
+* Base OS = OtherLinux64
+
+* Memory = 3072
+
+* Enable Serial Port (Port mode can be Disconnected)
 
 Once the VM is built and booted without the iso mounted, shut it down.
 At this point it is ready to be packaged so it can be used as a box in the 3-node lab.
