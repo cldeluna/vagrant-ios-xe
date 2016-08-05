@@ -163,63 +163,63 @@ wr mem
 sh ip int br
 ```
 
-			    ### rtr3 base config
+### rtr3 base config
 
-			    ```
-			    hostname rtr3
+```
+ hostname rtr3
 
-			    enable secret vagrant
-			    !
-			    aaa new-model
-			    !
-			    username vagrant password vagrant
+enable secret vagrant
+ !
+aaa new-model
+!
+username vagrant password vagrant
 
-			    !#  configure so that authentication use has priv 15 and goes into enable mode
-			    username vagrant privilege 15 password vagrant
-			    aaa authentication login default local
-			    aaa authorization exec default local
+!#  configure so that authentication use has priv 15 and goes into enable mode
+username vagrant privilege 15 password vagrant
+aaa authentication login default local
+aaa authorization exec default local
 
-			    ip domain-name uwaco.com
-			    !
-			    !
-			    crypto key gen rsa mod 1024
+ip domain-name uwaco.com
+!
+!
+crypto key gen rsa mod 1024
 
-			    interface GigabitEthernet2
-			     no shut
-			      ip address dhcp
+interface GigabitEthernet2
+no shut
+ip address dhcp
 
 
-			      !#### Paste in
-			      interface GigabitEthernet1
-			       desc NAT Interface for Vagrant
-			        no ip address
-				 shutdown
+!#### Paste in
+interface GigabitEthernet1
+  desc NAT Interface for Vagrant
+  no ip address
+  shutdown
 
-				 !
-				 interface GigabitEthernet2
-				  desc Bridged Interface on Local Lan
-				   no shut
+!
+interface GigabitEthernet2
+  desc Bridged Interface on Local Lan
+  no shut
 
-				   !
-				   interface GigabitEthernet3
-				    desc Host Only Network
-				     no shut
-				      ip address 192.168.99.11 255.255.255.0
+!
+interface GigabitEthernet3
+  desc Host Only Network
+  no shut
+  ip address 192.168.99.11 255.255.255.0
 
-				      interface GigabitEthernet4
-				       desc Host Only Network
-				        no shut
-					 ip address 192.168.56.11 255.255.255.0
-					 !
+interface GigabitEthernet4
+  desc Host Only Network
+  no shut
+  ip address 192.168.56.11 255.255.255.0
+!
 
-					 interface loopback0
-					  desc Primary Loopback for Routing
-					   ip address 1.1.1.11 255.255.255.255
-					   !
-					   end
-					   wr mem
-					   sh ip int br
-					   ```
+interface loopback0
+  desc Primary Loopback for Routing
+  ip address 1.1.1.11 255.255.255.255
+  !
+end
+wr mem
+sh ip int br
+```
 
 
 
