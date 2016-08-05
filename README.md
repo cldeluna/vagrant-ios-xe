@@ -1,14 +1,13 @@
-### 3-Node + Ansible Control Server
+# 3-Node + Ansible Control Server
 ## Vagrant configuration with three Cisco CSR1000v routers (4 interfaces each) and one Ubuntu 14.04 server acting as an Asible Control System 
 ## Basic Cisco Environment for Testing Ansible Roles
 
-Requirements:
+###Requirements:
 VirtualBox
 Vagrant
 Cisco CSR1000v ISO Image
 
-Instructions:
-
+###Instructions:
 
 You will need download the csr1000v iso from cisco.com.
 Once you have the iso bring up a VM accepting all the defaults but these:
@@ -104,65 +103,65 @@ interface GigabitEthernet2
 	     end
 	     wr mem
 	     sh ip int br
-	     ```
-
-	     ### rtr2 base config
-
-	     ```
-	     hostname rtr2
-
-	     enable secret vagrant
-	     !
-	     aaa new-model
-	     !
-	     username vagrant password vagrant
-
-	     !#  configure so that authentication use has priv 15 and goes into enable mode
-	     username vagrant privilege 15 password vagrant
-	     aaa authentication login default local
-	     aaa authorization exec default local
-
-	     ip domain-name uwaco.com
-	     !
-	     !
-	     crypto key gen rsa mod 1024
-
-	     interface GigabitEthernet2
-	      no shut
-	       ip address dhcp
+```
 
 
-	       !#### Paste in
-	       interface GigabitEthernet1
-	        desc NAT Interface for Vagrant
-		 no ip address
-		  shutdown
+### rtr2 base config
 
-		  !
-		  interface GigabitEthernet2
-		   desc Bridged Interface on Local Lan
-		    no shut
+```
+hostname rtr2
 
-		    !
-		    interface GigabitEthernet3
-		     desc Host Only Network
-		      no shut
-		       ip address 192.168.99.12 255.255.255.0
+enable secret vagrant
+!
+aaa new-model
+!
+username vagrant password vagrant
 
-		       interface GigabitEthernet4
-		        desc Host Only Network
-			 no shut
-			  ip address 192.168.56.12 255.255.255.0
-			  !
+!#  configure so that authentication use has priv 15 and goes into enable mode
+username vagrant privilege 15 password vagrant
+aaa authentication login default local
+aaa authorization exec default local
 
-			  interface loopback0
-			   desc Primary Loopback for Routing
-			    ip address 1.1.1.12 255.255.255.255
-			    !
-			    end
-			    wr mem
-			    sh ip int br
-			    ```
+ip domain-name uwaco.com
+!
+!
+crypto key gen rsa mod 1024
+
+interface GigabitEthernet2
+ no shut
+ ip address dhcp
+
+
+!#### Paste in
+interface GigabitEthernet1
+  desc NAT Interface for Vagrant
+  no ip address
+  shutdown
+!
+ interface GigabitEthernet2
+  desc Bridged Interface on Local Lan
+  no shut
+
+!
+interface GigabitEthernet3
+  desc Host Only Network
+  no shut
+  ip address 192.168.99.12 255.255.255.0
+
+interface GigabitEthernet4
+  desc Host Only Network
+  no shut
+  ip address 192.168.56.12 255.255.255.0
+!
+
+interface loopback0
+  desc Primary Loopback for Routing
+  ip address 1.1.1.12 255.255.255.255
+!
+end
+wr mem
+sh ip int br
+```
 
 			    ### rtr3 base config
 
