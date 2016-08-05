@@ -70,39 +70,39 @@ crypto key gen rsa mod 1024
 
 interface GigabitEthernet2
  no shut
-  ip address dhcp
+ ip address dhcp
 
 
-  !#### Paste in
-  interface GigabitEthernet1
-   desc NAT Interface for Vagrant
-    no ip address
-     shutdown
+!#### Paste in
+interface GigabitEthernet1
+  desc NAT Interface for Vagrant
+  no ip address
+  shutdown
 
-     !
-     interface GigabitEthernet2
-      desc Bridged Interface on Local Lan
-       no shut
+!
+interface GigabitEthernet2
+  desc Bridged Interface on Local Lan
+  no shut
 
-       !
-       interface GigabitEthernet3
-        desc Host Only Network
-	 no shut
-	  ip address 192.168.99.11 255.255.255.0
+!
+interface GigabitEthernet3
+  desc Host Only Network
+  no shut
+  ip address 192.168.99.11 255.255.255.0
 
-	  interface GigabitEthernet4
-	   desc Host Only Network
-	    no shut
-	     ip address 192.168.56.11 255.255.255.0
-	     !
+interface GigabitEthernet4
+  desc Host Only Network
+  no shut
+  ip address 192.168.56.11 255.255.255.0
+!
 
-	     !interface loopback0
-	     ! desc Primary Loopback for Routing
-	     ! ip address 1.1.1.11 255.255.255.255
-	     !
-	     end
-	     wr mem
-	     sh ip int br
+!interface loopback0
+! desc Primary Loopback for Routing
+! ip address 1.1.1.11 255.255.255.255
+!
+end
+wr mem
+sh ip int br
 ```
 
 
