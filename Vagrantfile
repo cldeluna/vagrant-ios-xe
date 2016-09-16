@@ -3,6 +3,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "rtr1" do |rtr1|
     rtr1.vm.box = "cisco-csr1kv-csr1000v-universalk9.03.16.03.S.155-3.S3"
+    rtr1.vm.boot_timeout = 60
     rtr1.vm.hostname = "rtr1"
     # GigabitEthernet2
     rtr1.vm.network "public_network",use_dhcp_assigned_default_route: true
