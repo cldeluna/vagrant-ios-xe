@@ -3,3 +3,4 @@
 *.txt
 *.log
 Users*
+*.retry
