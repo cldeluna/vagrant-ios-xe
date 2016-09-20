@@ -1,0 +1,9 @@
+# BGP ASR  Configuration for {{ inventory_hostname }}
+
+
+interface Loopback0
+ip address {{ inventory_hostname }}.loopback0
+
+
+router bgp {{ inventory_hostname }}.as
+

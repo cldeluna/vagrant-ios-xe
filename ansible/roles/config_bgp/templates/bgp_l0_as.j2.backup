@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+# BGP ASR  Configuration for {{ inventory_hostname }}
+
+
+interface Loopback0
+# ipv6 address {{ loop0 }}
+
+
+#router bgp {{ bgp_asn }}
+

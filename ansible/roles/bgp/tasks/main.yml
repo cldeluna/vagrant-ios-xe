@@ -1,0 +1,10 @@
+---
+# tasks file for bgp
+
+- name: Backup a configuration on a device
+  ios_template:
+    host: "{{ inventory_hostname }}"
+    username: vagrant
+    password: vagrant
+    backup: true
+    src: ntp.j2

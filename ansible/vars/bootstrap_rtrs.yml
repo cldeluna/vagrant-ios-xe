@@ -1,0 +1,8 @@
+---
+
+# cfg_file_dir = "/vagrant/ansible/roles/bootstrap/BOOTSTRAP_CFGS/"
+# vars file for bootstrap
+bootstrap_rtrs:
+  - {hostname: rtr1, domain: uwaco.com, ip3: 192.168.99.11, ip4: 192.168.56.11, lo0: 1.1.1.11}
+  - {hostname: rtr2, domain: uwaco.com, ip3: 192.168.99.12, ip4: 192.168.56.12, lo0: 1.1.1.12}  
+  - {hostname: rtr3, domain: uwaco.com, ip3: 192.168.99.13, ip4: 192.168.56.13, lo0: 1.1.1.13}

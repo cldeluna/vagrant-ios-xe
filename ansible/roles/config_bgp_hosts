@@ -1,0 +1,10 @@
+[all:vars]
+configdir=./configs
+ansible_user=vagrant
+ansible_password=vagrant
+
+[rtr]
+rtr1 ansible_host=192.168.99.11
+rtr2 ansible_host=192.168.99.12
+rtr3 ansible_host=192.168.99.13
+

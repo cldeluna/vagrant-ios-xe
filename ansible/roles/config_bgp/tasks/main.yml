@@ -1,0 +1,10 @@
+---
+# tasks file for bgp
+
+- name: Generate configuration files for each device which will be stored in {{ configdir }} 
+  ios_template:
+    host: "{{ inventory_hostname }}"
+    username: vagrant
+    password: vagrant
+    backup: true
+    src: bgp_l0_as.j2

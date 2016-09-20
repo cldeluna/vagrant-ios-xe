@@ -1,0 +1,9 @@
+---
+# This Playbook generates configurations only
+
+- hosts: localhost
+  connection: local
+  gather_facts: no
+
+  roles:
+    - bootstrap

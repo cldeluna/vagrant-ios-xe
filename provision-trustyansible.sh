@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pt-get update -y
+sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install -y nano
 sudo apt-get install -y git

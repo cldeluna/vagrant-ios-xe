@@ -1,0 +1,11 @@
+---
+# This Playbook generates configurations only
+
+- name: Creating BGP Template based configurations for IOS-XE Routers 
+  hosts: rtr 
+  connection: local
+  gather_facts: no
+
+  roles:
+    - config_bgp
+

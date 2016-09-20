@@ -1,0 +1,9 @@
+---
+# tasks file for bootstrap
+
+- name: Task to Generate bootstrap configuration files
+
+  template: src=bootstrap.j2 dest=/vagrant/ansible/BOOTSTRAP_CFGS/{{item.hostname}}.txt
+  
+  with_items:
+    - bootstrap_rtrs
