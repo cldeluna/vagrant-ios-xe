@@ -2,14 +2,14 @@
 ## Vagrant configuration with three Cisco CSR1000v routers (4 interfaces each) and one Ubuntu 14.04 server acting as an Asible Control System 
 ## Basic Cisco IOS-XE Environment for Testing Ansible Roles
 
-###Requirements:
+### Requirements:
 + VirtualBox
 
 + Vagrant
 
 + Cisco CSR1000v ISO Image
 
-###Instructions:
+### Instructions:
 
 You will need to download the csr1000v iso image from cisco.com.
 Once you have the iso image bring up a new VM in VirtualBox accepting all the defaults but these:
